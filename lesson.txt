@@ -1,0 +1,35 @@
+Task 1)
+Category
+    CREATE TABLE IF NOT EXISTS Category (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            tittle VARCHAR(100) NOT NULL
+        )
+    1)INSERT -> 
+    2)DELETE ->
+    3)UPDATE -> 
+    4)SELECT ->
+        1)SELECT id -> 
+        2)SELECT * ->
+
+Task 2)
+Product
+    CREATE TABLE IF NOT EXISTS Product (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            name VARCHAR(255) NOT NULL,
+            category_id INT NOT NULL,
+            count INT DEFAULT 0,
+            price FLOAT NOT NULL,
+            material VARCHAR(500),
+            FOREIGN KEY (category_id) REFERENCES category(id)
+        )
+    1)INSERT -> 
+    2)DELETE -> 
+    3)UPDATE -> 
+        1)CONNECT TO Category ->
+        2)Edit VALUES -> 
+    4)SELECT 
+        1)SELECT id -> 
+        2)SELECT * -> 
+
+Task 3)
+Write what tables we will need for final project exemple

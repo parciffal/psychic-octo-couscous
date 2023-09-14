@@ -6,10 +6,10 @@ import os
 
 class DatabaseManager(object):
     def __init__(self):
-        self.__db_name = "testmydb"
+        self.__db_name = "category"
         self.__db_user = "user"
         self.__db_pass = "password"
-        self.__db_host = "localhost"
+        self.__db_host = "127.0.0.1"
         self.__db_port = 3306
         self.conn = mysql.connector.connect(
             user=self.__db_user,
@@ -23,6 +23,7 @@ class DatabaseManager(object):
     def check_database(self):
         try:
             self.cur.execute(f"CREATE DATABASE IF NOT EXISTS {self.__db_name}")
+
             self.conn.commit()
             self.conn.database = self.__db_name
         except mysql.connector.Error as err:
@@ -60,6 +61,3 @@ class DatabaseManager(object):
 
     def __del__(self):
         self.conn.close()
-
-
-conn = DatabaseManager()

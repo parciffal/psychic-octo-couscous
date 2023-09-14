@@ -1,0 +1,25 @@
+1. How back-end works?
+2. What is URL?
+3. What kind of methods we have in web development?
+4. What is API?
+5. How work with DataBase?
+
+front
+
+back
+1. DataBase (Table, Field)
+2. API
+3. URL
+
+URL --> API (Function) --> Work with DataBase --> Send data to Front
+
+1. GET
+2. POST
+3. DELETE
+4. PATCH
+
+SQL |  noSQL
+sqlite3 | mongodb
+postgresql | oracle
+mysql
+mssql
