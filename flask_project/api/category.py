@@ -1,11 +1,12 @@
 from app import app, db_manager
 from flask import jsonify
 from flask import render_template, request
-
+from tools.auth import login_required
 # from flask import request, jsonify
 
 
 @app.route("/category", methods=["GET"])
+@login_required
 def get_categories():
     select_query = "SELECT * FROM Category"
     categories = db_manager.fetchall(select_query)
@@ -15,10 +16,11 @@ def get_categories():
 
 
 @app.route("/create/category", methods=["POST", "GET"])
+@login_required
 def create_category():
     if request.method == "POST":
         title = request.form["title"]
-        insert_query = "INSERT INTO Category (tittle) VALUES ({})".format(
+        insert_query = """INSERT INTO Category (tittle) VALUES ("{}")""".format(
             title)
 
         # Execute the SQL query with the provided title

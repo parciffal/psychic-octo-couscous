@@ -1,9 +1,7 @@
-from flask import render_template, redirect, request, flash
-from werkzeug.security import generate_password_hash
-import mysql.connector
-from mysql.connector import Error
-from app import app, db_manager
+from flask import render_template, redirect, request, flash, session
 from werkzeug.security import check_password_hash
+
+from app import app, db_manager
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -21,6 +19,7 @@ def login():
             # Assuming password is in the fourth column
             stored_password = user_data[3]
             if check_password_hash(stored_password, password):
+                session['username'] = user_data[1]
                 # Log in the user (you can implement your login logic here)
                 flash('Login successful', 'success')
                 return redirect('/')
