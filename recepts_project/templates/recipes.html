@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome Page</title>
+    <style>
+        /* ... Your CSS styles ... */
+    </style>
+</head>
+<body>
+
+<div class="action-links">
+    <a href="/recipes/new">Create Recipe</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<h2>Recipe List</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Recipe Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for recipe in recipes %}
+            <tr>
+                <td>{{ recipe.name }}</td>
+                <td>
+                    {% if recipe.user_id != current_user_id %}
+                        <a href="/view_recipe/{{ recipe.id }}">View</a>
+                    {% else %}
+                        <a href="/view_recipe/{{ recipe.id }}">View</a>
+                        <a href="/edit_recipe/{{ recipe.id }}">Edit</a>
+                        <a href="/delete_recipe/{{ recipe.id }}">Delete</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

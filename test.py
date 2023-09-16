@@ -1,10 +1,7 @@
-from .mysql_connector import conn
+def dfds(a, b, c, d, f):
+    ls = {
+        "user": "edgar",
+    }
+    print(ls)
 
-conn.query(
-    """
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255),
-    email VARCHAR(255)
-"""
-)
+dfds(1, 2, 3, 4, 5)
