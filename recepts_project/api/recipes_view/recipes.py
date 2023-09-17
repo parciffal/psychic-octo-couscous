@@ -3,9 +3,8 @@ from app import app, db_manager
 from tools.auth import login_required
 
 
-
-
 @app.route('/recipes', methods=['GET'])
+@app.route('/', methods=['GET'])
 @login_required
 def recipes():
 

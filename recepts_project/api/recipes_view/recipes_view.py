@@ -14,12 +14,12 @@ def view_recipe(recipe_id):
         select_user_query = f"SELECT first_name FROM Users WHERE id={recipe_data[-1]}"
         creator_name = db_manager.fetchone(select_user_query)[0]
         recipe_data_dict = {
+            "name": recipe_data[1],
             "description": recipe_data[2],
             "instructions": recipe_data[3],
             "date_made": recipe_data[4],
             "username": creator_name,
             "under_half_hour": recipe_data[5]
-
         }
         return render_template('view_recipes.html',
                                recipe=recipe_data_dict,
