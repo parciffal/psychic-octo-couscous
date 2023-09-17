@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Share</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin: 20px;
+        }
+
+        .container {
+            margin: 0 50px;
+        }
+
+        .container h2 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recipe Share</h1>
+    <div class="main-container">
+        <div class="container">
+            <h2>Registration</h2>
+            <form method="POST" name="registration" submit="/">
+                <label for="registration-first_name">First Name:</label>
+                <input type="text" id="registration-first_name" name="registration-first_name" required><br>
+                <label for="registration-last_name">Last Name:</label>
+                <input type="text" id="registration-last_name" name="registration-last_name" required><br>
+                <label for="registration-email">Email:</label>
+                <input type="email" id="registration-email" name="registration-email" required><br>
+                <label for="registration-password">Password:</label>
+                <input type="password" id="registration-password" name="registration-password" required><br>
+                <label for="registration-confirm-password">Confirm Password:</label>
+                <input type="password" id="registration-confirm-password" name="registration-confirm-password" required><br>
+                <input type="submit" id='registration-submit' value="Register">
+            </form>
+        </div>
+
+        <div class="container">
+            <h2>Log In</h2>
+            <form method="POST" name="login" submit="/">
+                <label for="login-email">Email:</label>
+                <input type="text" id="login-email" name="login-email" required><br>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="login-password" required><br>
+                <input type="submit" id='login-submit' value="Login">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
