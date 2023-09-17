@@ -3,21 +3,84 @@
 <head>
     <title>Welcome Page</title>
     <style>
-        /* ... Your CSS styles ... */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px 0;
+            background-color: #3498db;
+            color: white;
+        }
+
+        .action-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .action-links h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .action-links a {
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-links a:hover {
+            background-color: #f0f0f0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
 
+<div class="header">
+    <h2>Welcome, {{current_user_name}}</h2>
+</div>
+
 <div class="action-links">
+    <h3>Recipes list</h3>
     <a href="/recipes/new">Create Recipe</a>
     <a href="/logout">Logout</a>
 </div>
 
-<h2>Recipe List</h2>
 <table>
     <thead>
         <tr>
-            <th>Recipe Name</th>
+            <th>Name</th>
+            <th>Under</th>
+            <th>Posted By</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -25,13 +88,15 @@
         {% for recipe in recipes %}
             <tr>
                 <td>{{ recipe.name }}</td>
+                <td>{{ recipe.under }}</td>
+                <td>{{ recipe.username }}</td>
                 <td>
                     {% if recipe.user_id != current_user_id %}
-                        <a href="/view_recipe/{{ recipe.id }}">View</a>
+                        <a href="/recipe/{{ recipe.id }}">View</a>
                     {% else %}
-                        <a href="/view_recipe/{{ recipe.id }}">View</a>
-                        <a href="/edit_recipe/{{ recipe.id }}">Edit</a>
-                        <a href="/delete_recipe/{{ recipe.id }}">Delete</a>
+                        <a href="/recipe/{{ recipe.id }}">View</a>
+                        <a href="/edit/{{ recipe.id }}">Edit</a>
+                        <a href="/delete/{{ recipe.id }}">Delete</a>
                     {% endif %}
                 </td>
             </tr>

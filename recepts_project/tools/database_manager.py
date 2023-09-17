@@ -31,6 +31,9 @@ class DatabaseManager(object):
             print(f"Error: {err}")
 
     def query(self, arg, values=None):
+        """
+            query functinon run sql query and didn't return enithing
+        """
         try:
             if values is None:
                 self.cur.execute(arg)
@@ -41,6 +44,9 @@ class DatabaseManager(object):
             print(e)
 
     def fetchone(self, arg, values=None):
+        """
+            Run sql query and return single row
+        """
         try:
             if values is None:
                 self.cur.execute(arg)
@@ -51,6 +57,9 @@ class DatabaseManager(object):
             print(e)
 
     def fetchall(self, arg, values=None):
+        """
+            
+        """
         try:
             if values is None:
                 self.cur.execute(arg)

@@ -25,7 +25,7 @@ def login():
                 db_manager.query(login_query)
                 # Log in the user (you can implement your login logic here)
                 flash('Login successful', 'success')
-                return redirect('/')
+                return redirect('/recipes')
             else:
                 flash('Incorrect password', 'error')
         else:

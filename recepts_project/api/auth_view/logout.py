@@ -9,4 +9,5 @@ def logout():
     login_query = f"""UPDATE Users SET is_logged=False WHERE id={session['user_id']}"""
     db_manager.query(login_query)
     session.pop('email', None)
+    session.pop("user_id", None)
     return redirect(url_for('login'))

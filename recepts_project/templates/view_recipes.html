@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Recipe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px 0;
+            background-color: #3498db;
+            color: white;
+        }
+
+        .recipe-details {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .recipe-details h2 {
+            margin-top: 0;
+        }
+
+        .action-links {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .action-links a {
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-links a:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h2>View Recipe</h2>
+</div>
+
+<div class="recipe-details">
+    <h2>{{ recipe.name }}</h2>
+    <p><strong>Description:</strong> {{ recipe.description }}</p>
+    <p><strong>Instructions:</strong> {{ recipe.instructions }}</p>
+    <p><strong>Date Made:</strong> {{ recipe.date_made }}</p>
+    <p><strong>Under Half Hour:</strong> {{ "Yes" if recipe.under_half_hour else "No" }}</p>
+    <p><strong>Posted By:</strong> {{ recipe.username }}</p>
+</div>
+
+<div class="action-links">
+    <a href="/recipes">Back to Recipes</a>
+</div>
+
+</body>
+</html>

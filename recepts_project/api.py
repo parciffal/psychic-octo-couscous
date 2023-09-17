@@ -1,5 +1,5 @@
 from models import *
-from urls import app
+from api import app
 
 
 if __name__ == "__main__":

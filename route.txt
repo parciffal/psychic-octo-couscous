@@ -1,0 +1,14 @@
+to handle /recipe/2 this type of urls
+we have to make url of app.route("/recipe/<int:recipe_id>")
+in this case router understand that 2 of /recipe/2 url 
+is recipe_id and send to function recipe_id
+
+def view_recipes(recipe_id) where recipe_id = 2
+
+data ={
+    key: value,
+    'id': 1,
+}
+
+variable = value
+('username',) set of values
